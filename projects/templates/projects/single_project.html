@@ -1,0 +1,16 @@
+{% load static %}
+{% block content %}
+<h1>Project: {{ project.title }}</h1>
+
+<p>Description: {{ project.description }}</p>
+
+<p>Tags : {% for tag in project.tags.all %}
+    <div class="tag">{{tag.name}}</div>
+    
+    {% endfor %}</p>
+    
+<p>Created date: {{project.created_date}}</p>
+
+<img class='img' width='500' src="{{ project.photo.url }}" alt="">
+
+{% endblock %}

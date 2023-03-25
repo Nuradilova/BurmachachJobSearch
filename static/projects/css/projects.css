@@ -1,77 +1,17 @@
-h1{
-    margin: auto;
-    text-align: center;
-}
-table{
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.button{
-    border: solid rgb(80, 79, 79) 1px;
-    border-radius: 5%;
-    padding-left: 8px;
-    padding-right: 8px;
-    color: blueviolet;
-}
 
-
-.link{
-    color: black;
-    font-size: 20px;
-    font-weight: bolder;
-    font-style: italic;
+p.link-read-post {
+	text-align: right;
+	margin-right: 3%;
 }
-th{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size:23px ;
-    text-decoration: wavy;
+p.link-read-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #4783d1;
+	color: #fff;
+	text-decoration: none;
 }
-
-a{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    color: rgb(15, 78, 57);
-    margin-left: 25px;
-    margin-right: 25px;
-}
-a:hover{
-    background-color: rgb(199, 247, 232);
-    color: rgb(49, 49, 123);
-}
-td{
-    margin: 20px;
-    color: brown;
-}
-
-p{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 20px;
-}
-.new{
-    border: solid black 1px;
-    border-radius: 5%;
-    padding-left:3%;
-    padding-right: 3%;
-}
-.footer{
-    font-style:italic ;
-    
-}
-
-
-.img{
-    display: flex;
-    justify-content: center;
-}
-.img:hover{
-    width: 550px;
-    
+.heading{
+    font-weight: bold;
+    font-size: larger;
+    color: rgb(127, 200, 203);
 }

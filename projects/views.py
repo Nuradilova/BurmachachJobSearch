@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from projects.models import Project, tag
+from projects.models import *
 from projects.forms import ProjectForm
 
 # Create your views here.
@@ -44,3 +44,11 @@ def deleteProject(request, pk):
         return redirect('projects')
     context = {'project':project}
     return render(request, 'projects/delete.html',context)
+
+def deleteReview(request, pk):
+    project = Review.objects.get(id=pk)
+    if request.method == 'POST':
+        project.delete()
+        return redirect('projects')
+    context = {'project':project}
+    return render(request, 'projects/delete_review.html',context)

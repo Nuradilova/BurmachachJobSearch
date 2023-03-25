@@ -1,15 +1,25 @@
 {% load static %}
+{% block css_addtional %} 
+<link rel="stylesheet" href="{% static 'projects/css/projects.css' %}">
+{% endblock %}
 {% block content %}
 <h1>Project: {{ project.title }}</h1>
 
 <p>Description: {{ project.description }}</p>
 
-<p>Tags : {% for tag in project.tags.all %}
-    <div class="tag">{{tag.name}}</div>
-    
-    {% endfor %}</p>
-    
-<p>Created date: {{project.created_date}}</p>
+<p class="heading">Tags : {% for tag in project.tags.all %}
+<div class="tag">{{tag.name}}</div>
+
+{% endfor %}</p>
+
+<p class="heading">Reviews : {% for i in project.review.all %}
+<div>{{i.content}}</div>
+<p class="link-read-post"><a href="{% url 'delete-review' i.id %}">Delete</a></p>
+
+{% endfor %}</p>
+
+
+<p class="heading">Created date: {{project.created_date}}</p>
 
 <img class='img' width='500' src="{{ project.photo.url }}" alt="">
 

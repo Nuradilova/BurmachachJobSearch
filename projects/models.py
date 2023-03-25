@@ -9,23 +9,25 @@ class Project(models.Model):
     photo = models.ImageField(blank=True, null=True, default='fah.jpg')    
     created_date = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(primary_key=True,default=uuid.uuid4, unique=True, editable=False)
-    
+    review = models.ManyToManyField("Review")
     def __str__(self) -> str:
         return self.title
       
-# class Review(models.Model):
-#     # author
-#     VOTES = (
-#         ('up', 'Up Vote'), 
-#         ('down', 'Down Vote')
-#     )
-#     content = models.CharField(max_length=300)
-#     vote = models.CharField(max_length=20, choices=VOTES, null=True, blank=True)
-#     created_date = models.DateTimeField(auto_now_add=True)
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True, editable=False)
+class Review(models.Model):
+    # author
+    VOTES = (
+        ('up', 'Up Vote'), 
+        ('down', 'Down Vote')
+    )
+    content = models.CharField(max_length=300)
+    vote = models.CharField(max_length=20, choices=VOTES, null=True, blank=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True, editable=False)
 
-#     def __str__(self) -> str:
-#         return self.content
+    def __str__(self) -> str:
+        return self.content
+    def __repr__(self) -> str:
+        return self.content
     
     
 
